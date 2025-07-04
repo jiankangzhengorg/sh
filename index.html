@@ -115,14 +115,21 @@
       width: 100px;
     }
 
-    /* 合格结果的绿色椭圆边框 */
+    /* 合格结果的绿色椭圆边框 - 固定尺寸 */
     .result合格 {
-      display: inline-block;
-      padding: 5px 15px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px; /* 固定宽度 */
+      height: 36px; /* 固定高度 */
       color: green;
       font-weight: bold;
       border: 2px solid green;
-      border-radius: 20px;
+      border-radius: 18px; /* 高度的一半，形成椭圆 */
+      white-space: nowrap;
+      box-sizing: content-box;
+      min-width: 80px;
+      min-height: 36px;
     }
 
     .btn-group {
@@ -212,6 +219,8 @@
         padding: 8px 12px;
         font-size: 14px;
       }
+      
+      /* 移除了之前对.result合格的响应式样式 */
     }
   </style>
 </head>
@@ -258,7 +267,7 @@
         </div>
         <div class="info-item">
           <label>体检机构</label>
-          <span>上海市复旦大学附属金山医院</span>
+          <span>上海市复旦大学疾病预防控制中心</span>
         </div>
         <div class="info-item">
           <label>体检结果</label>
@@ -289,4 +298,4 @@
     });
   </script>
 </body>
-</html>  
+</html>
